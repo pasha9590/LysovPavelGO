@@ -1,0 +1,17 @@
+[Unit]
+Description=Simple Bash Web Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/webserver/webserver.sh
+WorkingDirectory=/opt/webserver
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+User=nobody
+Group=nogroup
+
+[Install]
+WantedBy=multi-user.target
